@@ -1,0 +1,123 @@
+<template>
+  <a-carousel
+    class="video-cell-carousel"
+    :after-change="onChange"
+    dotPosition="bottom"
+    :dots="true"
+    autoplay
+  >
+    <div class="video-cell-node" v-for="(item,index) in videos" :key="index">
+      <a-row :gutter="[16, 16]">
+        <a-col :span="12">
+          <VideoPane class="video-cell-node-movie">
+            <img class="video-movie" src="images/img/tiger.png" />
+            <div class="video-title">珍珠滩</div>
+          </VideoPane>
+        </a-col>
+        <a-col :span="12">
+          <VideoPane class="video-cell-node-movie">
+            <img class="video-movie" src="images/img/sea.png" />
+            <div class="video-title">珍珠滩</div>
+          </VideoPane>
+        </a-col>
+        <a-col :span="12">
+          <VideoPane class="video-cell-node-movie">
+            <img class="video-movie" src="images/img/scene.png" />
+            <div class="video-title">珍珠滩</div>
+          </VideoPane>
+        </a-col>
+        <a-col :span="12">
+          <VideoPane class="video-cell-node-movie">
+            <img class="video-movie" src="images/img/dragion.png" />
+            <div class="video-title">珍珠滩</div>
+          </VideoPane>
+        </a-col>
+      </a-row>
+    </div>
+  </a-carousel>
+</template>
+<script>
+import { Carousel } from "ant-design-vue";
+import VideoPane from "./VideoPane";
+export default {
+  components: {
+    Carousel,
+    VideoPane
+  },
+  data(){
+    return {
+      videos: [1,2,3,4]
+    }
+  },
+  methods: {
+    onChange() {
+      const a=[
+        [
+        {label:"珍珠滩", url: "images/img/dragion.png"},
+        {label:"珍珠滩", url: "images/img/dragion.png"},
+        {label:"珍珠滩", url: "images/img/dragion.png"},
+        {label:"珍珠滩", url: "images/img/dragion.png"},
+      ]
+      ]
+    }
+  }
+};
+</script>
+<style>
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+}
+.ant-carousel .slick-dots li {
+  margin: 0 6px !important;
+}
+.ant-carousel .slick-dots li button {
+  height: 8px !important;
+  width: 8px !important;
+  border-radius: 8px !important;
+  background: #00fcff !important;
+  cursor: hand !important;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  background: #00fcff !important;
+  opacity: 1;
+}
+</style>
+<style lang="less" scoped>
+.video {
+  width: 100%;
+  position: relative;
+  max-height: 450px;
+  &-img {
+    width: 100%;
+  }
+  &-cell {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // height: calc(100% - 30px);
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 10;
+    &-carousel {
+      height: 100%;
+      padding: 0px 20px;
+      margin-top: -20px;
+    }
+    &-node {
+      height: 100%;
+      padding: 10px 20px;
+      &-movie {
+        width: 100%;
+        height: 130px;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+</style>
