@@ -31,3 +31,8 @@ npm run test
 ```
 npm run lint
 ```
+
+#### 效果图
+
+![地图瓦片效果](./preview/01.png)
+![地图瓦片绘制效果](./preview/02.png)
