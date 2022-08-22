@@ -1,26 +1,33 @@
-# Screen
+# LMapView
 
-## Project setup
+## 地图瓦片本地载入示例
+
+## 项目初始化
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 项目启动
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 项目打包
+
 ```
 npm run build
 ```
 
-### Run your tests
+### 项目测试
+
 ```
 npm run test
 ```
 
-### Lints and fixes files
+### Eslint检查
+
 ```
 npm run lint
 ```
